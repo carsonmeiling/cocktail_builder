@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
@@ -6,21 +6,24 @@ const PopularCocktails  = () => {
 
   const[cocktails, setCocktails] = useState({});
 
-  axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php", {
+  const randomDrink = () => {
+
     
-  })
-  .then(res => {
-    console.log(res);
-    setCocktails(res)
-    debugger
-  })
-  .catch(err => {
-    console.error(err);
-  });
+    axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php", {
+    })
+    .then(res => {
+      console.log(res);
+      setCocktails(res)
+      
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }
     
   return(
     <div>
-      <p>Future drink list</p>
+      <button onClick={randomDrink}>Random Drink</button>
     </div> 
   )
 }

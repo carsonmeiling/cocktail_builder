@@ -12,7 +12,7 @@ function App() {
       <body>
         <h3>Build a cocktail</h3>
         <h2>Popular Drinks</h2>
-        <PopularCocktails />
+          <PopularCocktails />
       </body>
       <footer>
         <p>By Carson Meiling</p>
