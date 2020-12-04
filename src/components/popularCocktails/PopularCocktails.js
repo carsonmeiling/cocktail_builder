@@ -25,7 +25,8 @@ const PopularCocktails  = () => {
   return(
     <div>
        
-        <button onClick={randomDrink}>Random Drink</button> 
+      <button onClick={randomDrink}>Random Drink</button> 
+      
        
     </div> 
   )
