@@ -15,6 +15,8 @@ const PopularCocktails  = () => {
       // console.log(res);
       setCocktail(res.data.drinks)
       console.log(cocktail)
+      console.log(cocktail[0].strDrink)
+      console.log(cocktail ? true : false)
       
     })
     .catch(err => {
@@ -26,7 +28,13 @@ const PopularCocktails  = () => {
     <div>
        
       <button onClick={randomDrink}>Random Drink</button> 
-      
+      { 
+        cocktail ? 
+        <div>
+          <p>{cocktail[0].strDrink}</p>
+        </div> :
+        null
+      }
        
     </div> 
   )
