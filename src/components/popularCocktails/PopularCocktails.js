@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 
@@ -6,29 +6,46 @@ const PopularCocktails  = () => {
 
   const[cocktails, setCocktails] = useState([]);
   const[loading, setLoading] = useState(true);
+  const[searchTerm, setSearchTerm] = useState('')
 
-  const randomDrink = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    randomDrink(searchTerm)
+ }
 
-    
-    axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita", {
-    })
+  const randomDrink = (searchTerm) => {
+    axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`,
+    )
     .then(res => {
       setLoading(false)
       setCocktails(res.data.drinks)
-      console.log(cocktails)
-      
+      console.log(cocktails)  
     })
     .catch(err => {
       console.error(err);
-      
-
     });
   }
     
   return(
     <div>
+       <form onSubmit = {handleSubmit}>
+         <div className="search">
+            <label className="label">Find</label>
+            <input 
+            className="input"
+            type="text" 
+            name="term"
+            placeholder="Margarita, Russian ..."
+            value={searchTerm}
+            onChange={e=>setSearchTerm(e.target.value)}
+            />
+         </div>
+         <div>
+            <button type="submit" >Search</button>
+         </div>
+      </form>
        
-      <button onClick={randomDrink}>Random Drink</button> 
+      {/* <button onClick={randomDrink}>Random Drink</button>  */}
       {
         loading ? 
           <p>Loading</p> :

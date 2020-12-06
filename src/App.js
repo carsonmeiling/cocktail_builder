@@ -11,7 +11,7 @@ function App() {
       </header>
       <body>
         <h3>Build a cocktail</h3>
-        <h2>Popular Drinks</h2>
+        <h2>Search for a Cocktail</h2>
           <PopularCocktails />
       </body>
       <footer>
