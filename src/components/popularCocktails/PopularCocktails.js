@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const PopularCocktails  = () => {
 
-  const[cocktail, setCocktail] = useState({});
+  const[cocktails, setCocktails] = useState([]);
+  const[loading, setLoading] = useState(true);
 
   const randomDrink = () => {
 
@@ -12,15 +13,15 @@ const PopularCocktails  = () => {
     axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita", {
     })
     .then(res => {
-      // console.log(res);
-      setCocktail(res.data.drinks)
-      console.log(cocktail)
-      console.log(cocktail[0].strDrink)
-      console.log(cocktail ? true : false)
+      setLoading(false)
+      setCocktails(res.data.drinks)
+      console.log(cocktails)
       
     })
     .catch(err => {
       console.error(err);
+      
+
     });
   }
     
@@ -28,12 +29,14 @@ const PopularCocktails  = () => {
     <div>
        
       <button onClick={randomDrink}>Random Drink</button> 
-      { 
-        cocktail ? 
-        <div>
-          <p>{cocktail[0].strDrink}</p>
-        </div> :
-        null
+      {
+        loading ? 
+          <p>Loading</p> :
+          <ul>
+          {cocktails.map((cocktail, index) => 
+          (<ol key={index}>{cocktail.strDrink}</ol>
+            ))}
+        </ul> 
       }
        
     </div> 
