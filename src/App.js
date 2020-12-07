@@ -5,16 +5,15 @@ import PopularCocktails from '../src/components/popularCocktails/PopularCocktail
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <header>
         <h1>COCKTAILS</h1>
       </header>
       <body>
-        <h3>Build a cocktail</h3>
-        <h2>Search for a Cocktail</h2>
+        <h2>Search Popular Cocktails</h2>
           <PopularCocktails />
       </body>
-      <footer>
+      <footer className='footer'>
         <p>By Carson Meiling</p>
       </footer>
     </div>

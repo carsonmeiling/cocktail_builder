@@ -22,6 +22,7 @@ const PopularCocktails  = () => {
       console.log(cocktails)  
     })
     .catch(err => {
+      setLoading(true)
       console.error(err);
     });
   }
