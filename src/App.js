@@ -7,11 +7,20 @@ function App() {
   return (
     <div className='App'>
       <header>
-        <h1>COCKTAILS</h1>
+        <div className='header'>
+          <h1 className='title'>COCKTAILS</h1>
+          <div className='topNav'>
+            <a>Home</a>
+            <a>Popular</a>
+            <a>Knock Your Sox Off</a>
+          </div>
+        </div>
       </header>
       <body>
-        <h2>Search Popular Cocktails</h2>
-          <PopularCocktails />
+        <div className='body'>
+          <h2>Search Popular Cocktails</h2>
+            <PopularCocktails />
+        </div>
       </body>
       <footer className='footer'>
         <p>By Carson Meiling</p>
