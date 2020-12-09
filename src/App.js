@@ -1,32 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import PopularCocktails from '../src/components/popularCocktails/PopularCocktails';
+import React from 'react';
+import {Route} from 'react-router-dom';
+import Home from './components/Home'
 
 
-function App() {
-  return (
-    <div className='App'>
-      <header>
-        <div className='header'>
-          <h1 className='title'>COCKTAILS</h1>
-          <div className='topNav'>
-            <a>Home</a>
-            <a>Popular</a>
-            <a>Knock Your Sox Off</a>
-          </div>
-        </div>
-      </header>
-      <body>
-        <div className='body'>
-          <h2>Search Popular Cocktails</h2>
-            <PopularCocktails />
-        </div>
-      </body>
-      <footer className='footer'>
-        <p>By Carson Meiling</p>
-      </footer>
-    </div>
-  );
-}
+const App = () => (
+
+  <Route exact path="/" component={Home} />
+
+);
 
 export default App;
