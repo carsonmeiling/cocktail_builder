@@ -6,11 +6,11 @@
   width: 100vw;
 }
 
-.header {
+.title {
   height: 5vw;
   position: relative;
-  top: 0;
   width: 100vw;
+  padding: 15px;
   background-color: #dd9866;
 }
 

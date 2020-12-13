@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {Form, Button, Label, Container} from 'semantic-ui-react';
+import CocktailCard from './CocktailCard';
 
 
 const PopularCocktails  = () => {
@@ -51,11 +52,15 @@ const PopularCocktails  = () => {
        {
         loading ? 
           <p>Loading</p> :
-          <ul>
-          {cocktails.map((cocktail, index) => 
-          (<ol key={index}>{cocktail.strDrink}</ol>
-            ))}
-        </ul> 
+        //   <ul>
+        //   {cocktails.map((cocktail, index) => 
+        //   (<ol key={index}>{cocktail.strDrink}</ol>
+        //     ))}
+        // </ul> 
+        
+          cocktails.map((cocktail, index) => (
+          <CocktailCard cocktail={cocktail} key={index}/>
+          ))
       }
        
     </Container> 
