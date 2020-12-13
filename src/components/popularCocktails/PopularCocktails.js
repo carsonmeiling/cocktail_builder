@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {Form, Button, Label, Container} from 'semantic-ui-react';
 
 
 const PopularCocktails  = () => {
@@ -28,26 +29,26 @@ const PopularCocktails  = () => {
   }
     
   return(
-    <div>
-       <form onSubmit = {handleSubmit}>
-         <div className="search">
-            <label className="label">Find</label>
-            <input 
-            className="input"
-            type="text" 
-            name="term"
-            placeholder="Margarita, Russian ..."
-            value={searchTerm}
-            onChange={e=>setSearchTerm(e.target.value)}
+    <Container>
+       <Form 
+        onSubmit = {handleSubmit}>
+         <Form.Field>
+            <Label 
+              size='large'>
+              Find a Popular Cocktail
+            </Label>
+            <Form.Input 
+              className="input"
+              type="text" 
+              name="term"
+              placeholder="Margarita, Russian ..."
+              value={searchTerm}
+              onChange={e=>setSearchTerm(e.target.value)}
             />
-         </div>
-         <div>
-            <button type="submit" >Search</button>
-         </div>
-      </form>
-       
-      {/* <button onClick={randomDrink}>Random Drink</button>  */}
-      {
+            </Form.Field>
+            <Button type="submit" >Search</Button>
+      </Form>
+       {
         loading ? 
           <p>Loading</p> :
           <ul>
@@ -57,7 +58,7 @@ const PopularCocktails  = () => {
         </ul> 
       }
        
-    </div> 
+    </Container> 
   )
 }
 
