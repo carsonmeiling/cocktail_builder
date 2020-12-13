@@ -9,7 +9,7 @@ function Home() {
           <h1 className='title'>COCKTAILS</h1>
           <div className='topNav'>
             <a>Home</a>
-            <a>Popular</a>
+            <a href='/popularCocktails'>Popular</a>
             <a>Knock Your Sox Off</a>
           </div>
         </div>
