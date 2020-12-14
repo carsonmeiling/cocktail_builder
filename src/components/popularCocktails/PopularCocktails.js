@@ -52,12 +52,7 @@ const PopularCocktails  = () => {
        {
         loading ? 
           <p>Loading</p> :
-        //   <ul>
-        //   {cocktails.map((cocktail, index) => 
-        //   (<ol key={index}>{cocktail.strDrink}</ol>
-        //     ))}
-        // </ul> 
-        
+          
           cocktails.map((cocktail, index) => (
           <CocktailCard cocktail={cocktail} key={index}/>
           ))
